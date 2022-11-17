@@ -1,0 +1,23 @@
+{% load static %}
+
+<a href="/list">Display</a>
+
+<form method="POST" action="/list/update/"  id="myform" enctype="multipart/form-data">
+    {% csrf_token %}
+
+     <input type="hidden" name="txt1" value="{{users.0}}" >
+Name  <input type="text" name="txt2" value="{{users.1}}">
+Surname  <input type="text" name="txt3" value="{{users.2}}">
+Salary  <input type="text" name="num1" value="{{users.3}}">
+Phone  <input type="text" name="txt4" value="{{users.4}}">
+<!-- Country  <input type="text" name="txt5" value="{{users.5}}"> -->
+Country <select class="form-control" name='txt5'>
+    <option value="{{users.5}}">{{users.5}}</option>
+    {% for i in cnames %}
+        <option value='{{i.0}}'>{{i.0}}</option>
+    {% endfor %}
+    </select>
+   <br/>
+    <button type="submit" >Update Data</button>
+</form>
+</div>

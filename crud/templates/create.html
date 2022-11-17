@@ -1,0 +1,22 @@
+{% load static %}
+
+    <a href="/list">Display</a>
+
+	<form method="POST" action="/list/add/"  id="myform" enctype="multipart/form-data">
+		{% csrf_token %}
+
+    Email  <input type="email" name="txt1" placeholder="mail@mail.com">
+    Name  <input type="text" name="txt2" >
+    Surname  <input type="text" name="txt3" >
+    Salary  <input type="number" name="num1" >
+    Phone  <input type="tel" name="txt4" placeholder="87771234567" pattern="[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}">
+    <!-- Country  <input type="text" name="txt5" > -->
+    Country <select class="form-control" name='txt5'>
+        {% for i in code %}
+            <option value='{{i.0}}'>{{i.0}}</option>
+        {% endfor %}
+    </select>
+       <br/>
+        <button type="submit" >Insert Data</button>
+	</form>
+</div>

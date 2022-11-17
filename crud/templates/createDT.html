@@ -1,0 +1,12 @@
+{% load static %}
+
+    <a href="/disease_type">Display</a>
+
+	<form method="POST" action="/disease_type/addDT/"  id="myform" enctype="multipart/form-data">
+		{% csrf_token %}
+
+    Description  <input type="text" name="txt1" >
+       <br/>
+        <button type="submit" >Insert Data</button>
+	</form>
+</div>

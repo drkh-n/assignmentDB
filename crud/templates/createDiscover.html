@@ -1,0 +1,23 @@
+{% load static %}
+
+    <a href="/discover">Display</a>
+
+	<form method="POST" action="/discover/addDiscover/"  id="myform" enctype="multipart/form-data">
+		{% csrf_token %}
+    <!-- Country  <input type="text" name="txt1" > -->
+    Country <select class="form-control" name='txt1'>
+        {% for i in code1 %}
+            <option value='{{i.0}}'>{{i.0}}</option>
+        {% endfor %}
+    </select>
+    First Encountered Date  <input type="date" name="date1" >
+    <!-- Disease Code  <input type="text" name="txt2" > -->
+    Disease Code <select class="form-control" name='txt2'>
+        {% for i in code2 %}
+            <option value='{{i.0}}'>{{i.0}}</option>
+        {% endfor %}
+    </select>
+       <br/>
+        <button type="submit" >Insert Data</button>
+	</form>
+</div>

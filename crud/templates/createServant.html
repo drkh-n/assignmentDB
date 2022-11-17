@@ -1,0 +1,17 @@
+{% load static %}
+
+    <a href="/servant">Display</a>
+
+	<form method="POST" action="/servant/addServant/"  id="myform" enctype="multipart/form-data">
+		{% csrf_token %}
+    <!-- Email  <input type="text" name="txt1" > -->
+    Email <select class="form-control" name='txt1'>
+        {% for i in code %}
+            <option value='{{i.0}}'>{{i.0}}</option>
+        {% endfor %}
+    </select>
+    Department  <input type="text" name="txt2" >
+       <br/>
+        <button type="submit" >Insert Data</button>
+	</form>
+</div>

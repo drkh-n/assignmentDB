@@ -1,0 +1,13 @@
+{% load static %}
+
+    <a href="/country">Display</a>
+
+	<form method="POST" action="/country/addCountry/"  id="myform" enctype="multipart/form-data">
+		{% csrf_token %}
+
+    Name  <input type="text" name="txt1" >
+    Population  <input type="number" name="num1" >
+       <br/>
+        <button type="submit" >Insert Data</button>
+	</form>
+</div>

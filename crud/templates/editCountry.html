@@ -1,0 +1,13 @@
+{% load static %}
+
+<a href="/country">Display</a>
+
+<form method="POST" action="/country/updateCountry/"  id="myform" enctype="multipart/form-data">
+    {% csrf_token %}
+
+     <input type="hidden" name="txt1" value="{{country.0}}" >
+Population  <input type="number" name="num1" value="{{country.1}}">
+   <br/>
+    <button type="submit" >Update Data</button>
+</form>
+</div>

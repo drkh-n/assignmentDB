@@ -1,0 +1,30 @@
+{% load static %}
+
+    <a href="/record">Display</a>
+
+	<form method="POST" action="/record/addRecord/"  id="myform" enctype="multipart/form-data">
+		{% csrf_token %}
+        <!-- Email     <input type="text" name="txt1" value="{{record.0}}" > -->
+        Email <select class="form-control" name='txt1'>
+            {% for i in code3 %}
+                <option value='{{i.0}}'>{{i.0}}</option>
+            {% endfor %}
+        </select>
+        <!-- Country Name  <input type="text" name="txt2" value="{{record.1}}"> -->
+        Country Name <select class="form-control" name='txt2'>
+            {% for i in code2 %}
+                <option value='{{i.0}}'>{{i.0}}</option>
+            {% endfor %}
+        </select>
+        <!-- Disease Code  <input type="text" name="txt1" value="{{record.2}}"> -->
+        Disease Code <select class="form-control" name='txt3'>
+            {% for i in code1 %}
+                <option value='{{i.0}}'>{{i.0}}</option>
+            {% endfor %}
+        </select>
+        Total Deaths  <input type="number" name="num1" value="{{record.4}}">
+        Total Patients  <input type="number" name="num2" value="{{record.5}}">
+       <br/>
+        <button type="submit" >Insert Data</button>
+	</form>
+</div>

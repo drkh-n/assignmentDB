@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <a href="/servant/createServant">Add</a>
+    <table border='1'>
+    <thead class="thead">
+        <tr>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    {% for i in servant %}
+    <tr>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td><a href='editServant/{{i.0}}'>Edit</a> | <a href='deleteServant/{{i.0}}'>Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

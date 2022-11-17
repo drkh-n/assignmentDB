@@ -1,0 +1,13 @@
+{% load static %}
+
+<a href="/disease_type">Display</a>
+
+<form method="POST" action="/disease_type/updateDT/"  id="myform" enctype="multipart/form-data">
+    {% csrf_token %}
+
+     <input type="hidden" name="txt1" value="{{disease_type.0}}" >
+Description  <input type="text" name="txt2" value="{{disease_type.1}}">
+   <br/>
+    <button type="submit" >Update Data</button>
+</form>
+</div>

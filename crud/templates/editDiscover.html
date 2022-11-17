@@ -1,0 +1,26 @@
+{% load static %}
+
+<a href="/discover">Display</a>
+
+<form method="POST" action="/discover/updateDiscover/"  id="myform" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<!-- Country     <input type="text" name="txt1" value="{{discover.0}}" > -->
+Country <select class="form-control" name='txt1'>
+    <option value="{{discover.0}}">{{discover.0}}</option>
+   {% for i in data2 %}
+       <option value='{{i.0}}'>{{i.0}}</option>
+   {% endfor %}
+</select>
+First Encountered Date  <input type="date" name="date1" value="{{discover.1}}">
+<!-- Disease Code <input type="text" name="txt2" value="{{discover.2}}"> -->
+Disease Code <select class="form-control" name='txt2'>
+    <option value="{{discover.2}}">{{discover.2}}</option>
+   {% for i in data1 %}
+       <option value='{{i.0}}'>{{i.0}}</option>
+   {% endfor %}
+</select>
+   <br/>
+    <button type="submit" >Update Data</button>
+</form>
+</div>

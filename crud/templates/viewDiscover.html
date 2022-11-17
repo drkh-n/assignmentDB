@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <a href="/discover/createDiscover">Add</a>
+    <table border='1'>
+    <thead class="thead">
+        <tr>
+            <th>Country Name</th>
+            <th>First Encountered Date</th>
+            <th>Disease Code</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    {% for i in discover %}
+    <tr>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td>{{i.2}}</td>
+        <td><a href='editDiscover/{{i.0}}/{{i.2}}'>Edit</a> | <a href='deleteDiscover/{{i.0}}/{{i.2}}'>Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% load static %}
+
+<a href="/record">Display</a>
+
+<form method="POST" action="/record/updateRecord/"  id="myform" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<!-- Email     <input type="text" name="txt1" value="{{record.0}}" > -->
+Email (Public Servant) <select class="form-control" name='txt1'>
+    <option value="{{record.0}}">{{record.0}}</option>
+   {% for i in data1 %}
+       <option value='{{i.0}}'>{{i.0}}</option>
+   {% endfor %}
+</select>
+
+<!-- Country Name  <input type="text" name="txt2" value="{{record.1}}"> -->
+Country Name <select class="form-control" name='txt2'>
+    <option value="{{record.1}}">{{record.1}}</option>
+   {% for i in data2 %}
+       <option value='{{i.0}}'>{{i.0}}</option>
+   {% endfor %}
+</select>
+
+<!-- Disease Code  <input type="text" name="txt3" value="{{record.2}}"> -->
+Disease Code <select class="form-control" name='txt3'>
+    <option value="{{record.2}}">{{record.2}}</option>
+   {% for i in data3 %}
+       <option value='{{i.0}}'>{{i.0}}</option>
+   {% endfor %}
+</select>
+
+Total Deaths  <input type="number" name="num1" value="{{record.3}}">
+Total Patients  <input type="number" name="num2" value="{{record.4}}">
+   <br/>
+    <button type="submit" >Update Data</button>
+</form>
+</div>

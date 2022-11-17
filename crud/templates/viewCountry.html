@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <a href="/country/createCountry">Add</a>
+    <table border='1'>
+    <thead class="thead">
+        <tr>
+            <th>Name</th>
+            <th>Population</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    {% for i in country %}
+    <tr>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td><a href='editCountry/{{i.0}}'>Edit</a> | <a href='deleteCountry/{{i.0}}'>Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

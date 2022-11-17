@@ -1,0 +1,25 @@
+{% load static %}
+
+<a href="/spec">Display</a>
+
+<form method="POST" action="/spec/updateSpec/"  id="myform" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<!-- ID (Disease Type)   <input type="number" name="num1" value="{{spec.0}}" > -->
+    ID (Disease Type) <select class="form-control" name='num1'>
+        <option value="{{spec.0}}">{{spec.0}}</option>
+       {% for i in data1 %}
+           <option value='{{i.0}}'>{{i.0}}</option>
+       {% endfor %}
+    </select>
+    <!-- Email  <input type="text" name="txt1" value="{{spec.1}}"> -->
+    Email (Doctor) <select class="form-control" name='txt1'>
+        <option value="{{spec.1}}">{{spec.1}}</option>
+       {% for i in data2 %}
+           <option value='{{i.0}}'>{{i.0}}</option>
+       {% endfor %}
+    </select>
+   <br/>
+    <button type="submit" >Update Data</button>
+</form>
+</div>

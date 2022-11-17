@@ -1,0 +1,21 @@
+{% load static %}
+
+<a href="/disease">Display</a>
+
+<form method="POST" action="/disease/updateDisease/"  id="myform" enctype="multipart/form-data">
+    {% csrf_token %}
+
+Disease Code     <input type="text" name="txt1" value="{{disease.0}}" >
+Pathogen  <input type="text" name="txt2" value="{{disease.1}}">
+Description  <input type="text" name="txt3" value="{{disease.2}}">
+<!-- Id  <input type="number" name="num1" value="{{disease.3}}"> -->
+Id (Disease Type)<select class="form-control" name='num1'>
+    <option value="{{disease.3}}">{{disease.3}}</option>
+    {% for i in data2 %}
+        <option value='{{i.0}}'>{{i.0}}</option>
+    {% endfor %}
+</select>
+   <br/>
+    <button type="submit" >Update Data</button>
+</form>
+</div>
